@@ -1,0 +1,256 @@
+@charset "utf-8";
+* {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+.clear {
+    background: none;
+    border: 0;
+    clear: both;
+    display: block;
+    float: none;
+    font-size: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset,
+img {
+    border: none;
+}
+
+caption,
+th {
+    font-weight: normal;
+}
+
+address,
+cite,
+dfn,
+em,
+var,
+i {
+    font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp,
+tt {
+    font-family: "Courier New", Courier, monospace;
+    white-space: normal;
+}
+
+ul,
+ol {
+    list-style: none outside;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+q:before,
+q:after {
+    content: '';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+select,
+input,
+button,
+textarea {
+    font-size: 100%;
+}
+
+
+img {
+    display: block;
+}
+
+.signi {
+    width: 1366px;
+    margin: 0 auto;
+    height: 680px;
+    background: #fff;
+}
+
+.sign_left {
+    width: 423px;
+    height: 680px;
+    float: left;
+    padding-left: 77px;
+    box-sizing: border-box;
+}
+
+.sign_logo {
+    width: 100%;
+    margin-top: 70px;
+}
+
+.sign_left>p {
+    margin-top: 78px;
+    font-size: 18px;
+    color: #777778;
+}
+.sign_left>h4{
+    margin-top: 22px;
+    color: #9b1f2e;
+    font-size: 40px;
+}
+
+.sign_right {
+    width: 943px;
+    height: 680px;
+    float: left;
+}
+
+.sign_right img {
+    width: 943px;
+    height: 680px;
+}
+.sign_left .sign{
+    margin-top: 77px;
+}
+.sign_left .leba{
+    border-bottom: 2px solid #cecece;
+    width: 309px;
+    margin-top: 15px;
+    overflow: hidden;
+    padding-bottom: 11px;
+    line-height: 40px;
+
+}
+.sign_left .leba input{
+    border: none;
+    display: block;
+    float: left;
+    margin-top: 10px;
+    outline:none;
+    margin-left: 20px;
+    width: 186px;
+    color: #bbb;
+}
+.sign_left .leba p{
+    width: 35px;
+    height: 35px;
+    background-image: url(../images/icon.png) ;
+    background-position: -449px;
+    background-repeat: no-repeat;
+    background-size: auto 35px;
+    float: left;
+}
+.sign_left .leba .ppp{
+    background: url(../images/icon.png)no-repeat -250px ;
+    background-size: auto 35px;
+}
+.sign_left label{
+    display: block;
+    float: left;
+    font-size: 12pt;
+    color: #9d9d9e;
+    line-height: 40px;
+    margin-left: 18px;
+    width: 48px;
+}
+.sign_left .error{
+    width: 309px;
+    margin-top: 17px;
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+    font-weight: 700;
+}
+.sign .btn{
+    background: #7f7f7f;
+    color: #fff;
+    width: 166px;
+    height: 30px;
+    display: block;
+    margin:  0 auto;
+    border: 0;
+    outline:none;
+}
+.sign_btn{
+    width: 309px;
+    margin-top: 32px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

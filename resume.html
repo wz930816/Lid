@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/jquery1.11.1.min.js"></script>
+</head>
+
+<body>
+    <!-- 头部start -->
+    <header id="header">
+            <div class="wrap">
+                <div class="head_left fl">
+                    <h1 class="logo fl">
+                        <img src="images/logo.png" alt="">
+                    </h1>
+                    <nav class="nav fl">
+                        <a href="">首页</a>
+                        <a href="" class="btc">搜索</a>
+                        <a href="">收藏夹</a>
+                        <a href="">系统设置</a>
+                    </nav>
+                </div>
+                <div class="head_right fr">
+                    <form action="" class="search fl">
+                        <input type="text" class="search_inp">
+                        <i class="search_icon"></i>
+                        <input type="button" value="搜索" class="search_btn">
+                    </form>
+                    <div class="user fl">
+                        <i></i>
+                        <span class="user_name">张三</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- 头部end -->
+    
+        <!-- 面包屑导航start -->
+        <section id="smenu">
+            <div class="smenu_box">
+                <a href="javascript:;">当前位置</a>
+                >
+                <a href="">批量数据分析</a>
+            </div>
+        </section>
+        <!-- 面包屑导航end -->
+    <div class="contont">
+        <div class="resume">
+            <h3>李强同志简历</h3>
+            <div class="resume_con">
+                <div class="resume_con_top">
+                    <div class="resume_con_top_photo">
+                        <img src="" alt="">
+                    </div>
+                    <div class="resume_con_top_detailed">
+                        <div class="xiaa">
+                            <div class="xiaa_left">
+                                <span class="zhicheng">上海市委书记 </span>
+                                <span class="xingming"> 李强</span>
+                            </div>
+                            <div class="xiaa_right">
+                                <p id="open-contrast"><i></i>加入对比</p>
+                                <p><i></i>导出</p>
+                                <p><i></i>修改</p>
+                                <p><i></i>收藏</p>
+                            </div>
+                        </div>
+                        <div class="xinxi">
+
+                            <dl>
+                                <dt>姓名</dt>
+                                <dd id="name">李强</dd>
+
+                                <dt>性别</dt>
+                                <dd id="sex">男</dd>
+
+                                <dt>民族</dt>
+                                <dd id="nation">汉族</dd>
+
+                                <dt>籍贯</dt>
+                                <dd id="native">浙江瑞安</dd>
+
+                                <dt>出生日期</dt>
+                                <dd id="birth_date">1959-07</dd>
+
+                                <dt>职称</dt>
+                                <dd id="title_id"></dd>
+
+                                <dt>参加工作时间</dt>
+                                <dd id="work_time">1976-07</dd>
+
+                                <dt>入党时间</dt>
+                                <dd id="party_time">1983-4</dd>
+                            </dl>
+                            <dl>
+                                <dt>主要职位</dt>
+                                <dd id="position">上海市委书记</dd>
+
+                                <dt>职级</dt>
+                                <dd id="level">副国级</dd>
+
+                                <dt>行政属地</dt>
+                                <dd id="possession">上海</dd>
+
+                                <dt>职位树位置</dt>
+                                <dd id="newpos_name">上海</dd>
+
+                                <dt>学历</dt>
+                                <dd id="education">中央党校研究生</dd>
+
+                                <dt>学位</dt>
+                                <dd id="degree">高级管理人员工商管理硕士</dd>
+
+                                <dt>毕业院校</dt>
+                                <dd id="school">中央党校</dd>
+
+                                <dt>特殊群体</dt>
+                                <dd id="is_special">否</dd>
+                            </dl>
+
+                        </div>
+
+                    </div>
+                </div>
+                <script>
+                        $.ajax({
+                            url: 'native_api.json',
+                            type: 'POST',
+                            data:'',
+                            success: function (msg) {
+                                var mydata=msg.data
+                                $('#is_special').html(mydata.is_special);
+                                $('#school').html(mydata.school);
+                                $('#degree').html(mydata.degree);
+                                $('#education').html(mydata.education);
+                                $('#newpos_name').html(mydata.newpos_name);
+                                $('#possession').html(mydata.possession);
+                                $('#level').html(mydata.level);
+                                $('#position').html(mydata.position);
+                                $('#party_time').html(mydata.party_time);
+                                $('#work_time').html(mydata.work_time);
+                                $('#title_id').html(mydata.title_id);
+                                $('#birth_date').html(mydata.birth_date);
+                                $('#native').html(mydata.native);
+                                $('#nation').html(mydata.nation);
+                                $('#sex').html(mydata.sex);
+                                $('#name').html(mydata.name);
+                                console.log(mydata)
+                            }
+                        })
+                    </script>
+                <div class="clear"></div>
+                <div class="resume_con_bot">
+                    <div class="index_left_information_tit">
+                        <i></i><span>任职履历</span>
+                    </div>
+                    <ul class="lvli">
+                        <li>
+                            <i></i>
+                            <a href="">
+                                <em></em>
+                                <span>1976-1977 </span>
+                                浙江省瑞安县马屿区机电排灌站职工（其间：1977.04-1977.10借调瑞安县路线教育工作队驻江溪公社分队工作）
+                            </a>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a href="">
+                                <em></em>
+                                <span>1976-1977 </span>
+                                浙江省瑞安县马屿区机电排灌站职工（其间：1977.04-1977.10借调瑞安县路线教育工作队驻江溪公社分队工作）
+                            </a>
+                        </li>
+
+
+                    </ul>
+                    <div class="index_left_information_tit" style="margin-top:30px;">
+                        <i></i><span>学习履历</span>
+                    </div>
+                    <ul class="lvli">
+                        <li>
+                            <i></i>
+                            <a href="">
+                                <em></em>
+                                <span>1976-1977 </span>
+                                浙江省瑞安县马屿区机电排灌站职工（其间：1977.04-1977.10借调瑞安县路线教育工作队驻江溪公社分队工作）
+                            </a>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a href="">
+                                <em></em>
+                                <span>1976-1977 </span>
+                                浙江省瑞安县马屿区机电排灌站职工（其间：1977.04-1977.10借调瑞安县路线教育工作队驻江溪公社分队工作）
+                            </a>
+                        </li>
+
+
+                    </ul>
+                    <div class="clear"></div>
+                    <div class="editor_tu">
+                        <div class="zhiyeshu">
+                            <div class="index_left_information_tit" style="margin-top:30px;">
+                                <i></i><span>职业树</span>
+                            </div>
+                            <div class="resume_canvas">
+                                <canvas width="453" height="293"></canvas>
+                            </div>
+
+                        </div>
+                        <div class="qushi">
+                            <div class="index_left_information_tit" style="margin-top:30px;">
+                                <i></i><span>职业晋升趋势图</span>
+                            </div>
+                            <div class="resume_canvas">
+                                <canvas width="453" height="293"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resume_news">
+                        <div class="index_left_information_tit" style="margin-top:30px;">
+                            <i></i><span>相关新闻</span>
+                        </div>
+                        <ul class="resume_news_left">
+                            <li>
+                                <a href="">
+                                    <p>
+                                        市委书记李强慰问石二社区综合为老服务中心老人
+                                    </p>
+                                    <span class="leibie">社会</span>
+                                    <span class="tim">2018-11-11</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>
+                                        市委书记李强慰问石二社区综合为老服务中心老人
+                                    </p>
+                                    <span class="leibie">社会</span>
+                                    <span class="tim">2018-11-11</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>
+                                        市委书记李强慰问石二社区综合为老服务中心老人
+                                    </p>
+                                    <span class="leibie">社会</span>
+                                    <span class="tim">2018-11-11</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>
+                                        市委书记李强慰问石二社区综合为老服务中心老人
+                                    </p>
+                                    <span class="leibie">社会</span>
+                                    <span class="tim">2018-11-11</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>
+                                        市委书记李强慰问石二社区综合为老服务中心老人
+                                    </p>
+                                    <span class="leibie">社会</span>
+                                    <span class="tim">2018-11-11</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="resume_news_left" style="margin-left:28px;">
+                            <li>
+                                <a href="">
+                                    <p>
+                                        市委书记李强慰问石二社区综合为老服务中心老人
+                                    </p>
+                                    <span class="leibie">社会</span>
+                                    <span class="tim">2018-11-11</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>
+                                        市委书记李强慰问石二社区综合为老服务中心老人
+                                    </p>
+                                    <span class="leibie">社会</span>
+                                    <span class="tim">2018-11-11</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>
+                                        市委书记李强慰问石二社区综合为老服务中心老人
+                                    </p>
+                                    <span class="leibie">社会</span>
+                                    <span class="tim">2018-11-11</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>
+                                        市委书记李强慰问石二社区综合为老服务中心老人
+                                    </p>
+                                    <span class="leibie">社会</span>
+                                    <span class="tim">2018-11-11</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <p>
+                                        市委书记李强慰问石二社区综合为老服务中心老人
+                                    </p>
+                                    <span class="leibie">社会</span>
+                                    <span class="tim">2018-11-11</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="gengduo"> <a href="">查看更多>></a> </p>
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="contrast">
+
+        <div class="contrast_con">
+            <p class="">对比栏</p>
+            <div class="hide">隐藏</div>
+            <ul>
+                    <li>
+                        <a href="">
+                            <div class="contrast_zhaopian">
+                                <img src="" alt="">
+                            </div>
+                            <div class="contrast_xz">
+                                <p class="tianduibi">添加对比</p>
+                                <p class="contrast_xz_z">市委书记</p>
+                                <p class="contrast_xz_x">李强</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="contrast_zhaopian">
+                                <img src="" alt="">
+                            </div>
+                            <div class="contrast_xz">
+                                <p class="tianduibi">添加对比</p>
+                                <p class="contrast_xz_z">市委书记</p>
+                                <p class="contrast_xz_x">李强</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="contrast_zhaopian">
+                                <img src="" alt="">
+                            </div>
+                            <div class="contrast_xz">
+                                <p class="tianduibi">添加对比</p>
+                                <p class="contrast_xz_z">市委书记</p>
+                                <p class="contrast_xz_x">李强</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="contrast_zhaopian">
+                                <img src="" alt="">
+                            </div>
+                            <div class="contrast_xz">
+                                <p class="tianduibi">添加对比</p>
+                                <p class="contrast_xz_z">市委书记</p>
+                                <p class="contrast_xz_x">李强</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="contrast_zhaopian">
+                                <img src="" alt="">
+                            </div>
+                            <div class="contrast_xz">
+                                <p class="tianduibi">添加对比</p>
+                                <p class="contrast_xz_z">市委书记</p>
+                                <p class="contrast_xz_x">李强</p>
+                            </div>
+                        </a>
+                    </li>
+
+                <div class="duibi">
+                    <a href="" class="duibi_top">对比</a>
+                    <a href="" class="duibi_but">清空对比栏</a>
+                </div>
+            </ul>
+
+            <script>
+                $(".contrast_con .hide").click(function () {
+                    $(".contrast").stop().animate({ "bottom": "-140px" }, 100)
+                })
+            </script>
+            
+
+
+
+
+        </div>
+    </div>
+    <script>
+        $("#open-contrast").click(function(){
+            $(".contrast").stop().animate({"bottom": "0"},100)
+        })
+    </script>
+    <div style="height:70px;"></div>
+</body>
+
+</html>
