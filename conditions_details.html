@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>条件检索</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/conditions_details.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/pretty.css">
+    <script src="js/jquery1.11.1.min.js"></script>
+</head>
+
+<body id="singe_dta_add">
+    <!-- 头部start -->
+    <header id="header">
+        <div class="wrap">
+            <div class="head_left fl">
+                <h1 class="logo fl">
+                    <img src="images/logo.png" alt="">
+                </h1>
+                <nav class="nav fl">
+                    <a href="">首页</a>
+                    <a href="" class="btc">搜索</a>
+                    <a href="">收藏夹</a>
+                    <a href="">系统设置</a>
+                </nav>
+            </div>
+            <div class="head_right fr">
+                <div class="user fl">
+                    <i></i>
+                    <span class="user_name">张三</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 头部end -->
+
+    <!-- 面包屑导航start -->
+    <section id="smenu">
+        <div class="smenu_box">
+            <a href="javascript:;">当前位置</a>
+            >
+            <a href="">批量数据分析</a>
+        </div>
+    </section>
+    <!-- 面包屑导航end -->
+
+    <!-- 条件检索主体start -->
+    <section class="cdts_content">
+        <form action="" class="cdts_top">
+            <div class="ret_box ret_reset">
+                <select name="category" class="fl" id="cdts_seach">
+                    <option value="1">姓名</option>
+                    <option value="2">职位</option>
+                </select>
+                <input type="text" class="fl" name="keyword">
+                <button type="submit" value="submit" class="ret_btn fl">搜索</button>
+            </div>
+            <ul class="cdts_box" id="check_Box">
+                <li class="administrative clearfix">
+                    <div class="fl">
+                        <span class="cdts_tit fl">变动前</span>
+                        <span class="cdts_num fl">
+                            <label class="my_protocol">
+                                <input class="input_agreement_protocol" type="checkbox" id="qian" />
+                                <span></span>
+                                <a href="" class="ad_item">全选</a>
+                            </label>
+                        </span>
+                    </div>
+
+                    <div class="cdts_items fl" id="quan_checkbox">
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" value="beijing" />
+                            <span></span>
+                            <a href="" class="ad_item" for="北京">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" value="唐山" />
+                            <span></span>
+                            <a href="" class="ad_item" for="唐山">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" value="河北" />
+                            <span></span>
+                            <a href="" class="ad_item" for="河北">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" value="上海" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" value="石家庄" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京市</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京北京北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+
+
+                    </div>
+                </li>
+                <li class="address clearfix">
+                    <div class="fl">
+                        <span class="cdts_tit fl">变动后</span>
+                        <span class="cdts_num fl">
+                            <label class="my_protocol">
+                                <input class="input_agreement_protocol" type="checkbox" id="hou" />
+                                <span></span>
+                                <a href="" class="ad_item">全选</a>
+                            </label>
+                        </span>
+                    </div>
+                    <div class="address_items fl" id="hou_checkbox">
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京市</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京北京北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                        <label class="my_protocol">
+                            <input class="input_agreement_protocol" type="checkbox" />
+                            <span></span>
+                            <a href="" class="ad_item">北京</a>
+                        </label>
+                    </div>
+                </li>
+                <li class="birth clearfix">
+                    <span class="cdts_tit fl">时间范围</span>
+                    <span class="cdts_num cdts_num2 fl">不限</span>
+                    <div class="join_items fl">
+                        <div class="date_box fl">
+                            <input type="text" name="" id="conditions_details_time1" placeholder="1994-07">
+                            <i></i>
+                        </div>
+                        <span class="date_line fl">—</span>
+                        <div class="date_box fl">
+                            <input type="text" name="" id="conditions_details_time" placeholder="1994-07">
+                            <i></i>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <button id="btn" type="button">搜索</button>
+        </form>
+        <div class="resulf_box clearfix">
+            <div class="resulf_top fl">
+                <span class="resulf_tit fl">检索结果</span>
+                <div class="checkbox" id="all">
+                    <label class="my_protocol1">
+                        <input class="" type="checkbox" id="all2" />
+                    </label>
+                </div>
+                <label for="all">全选</label>
+                <div class="checked" id="selected">
+                    <label class="my_protocol1">
+                        <input class="" type="checkbox" id="selected1" />
+                    </label>
+                </div>
+                <label for="selected">反选</label>
+                <a href="">批量分析</a>
+                <span class="fr">共有2条数据</span>
+            </div>
+            <ul class="resulf_items fl" id="resulf_items">
+                <li class="resulf_item fl">
+                    <img src="images/touxiang_03.jpg" alt="" class="fl">
+                    <div class="text_info fl">
+                        <div class="info_top">
+                            <div class="top_left fl">
+                                <a href="" class="position fourteen">北京市委副书记、市长</a>
+                                <a href="" class="peo_name fourteen">陈吉宁</a>
+                            </div>
+                            <div class="top_center fl">
+                                <span>职位树位置</span>
+                                <a href="" class="fourteen">北京/市委</a>
+                            </div>
+                            <div class="top_right fr">
+                                <a href="" class="contrast">加入对比</a>
+                                <a href="" class="modify">修改</a>
+                                <a href="" class="collection">收藏</a>
+                            </div>
+                        </div>
+                        <div class="info_bottom">
+                            <ul class="inf_bottom_left fl">
+                                <li class="others">
+                                    <label class="">籍贯</label>
+                                    <span>汉族</span>
+                                </li>
+                                <li class="others">
+                                    <label class="">籍贯</label>
+                                    <span>吉林梨树</span>
+                                </li>
+                                <li class="others">
+                                    <label class="">学历</label>
+                                    <span>研究生</span>
+                                </li>
+                            </ul>
+                            <ul class="inf_bottom_right fl">
+                                <li class="others">
+                                    <label class="right_label">出生日期</label>
+                                    <span>1964-08</span>
+                                </li>
+                                <li class="others">
+                                    <label class="right_label">参加工作时间</label>
+                                    <span>1985-09</span>
+                                </li>
+                                <li class="others">
+                                    <label class="right_label">入党时间</label>
+                                    <span>1984-07</span>
+                                </li>
+                            </ul>
+                            <div class="checkbox btn_posi">
+                                <label class="my_protocol1" style="margin-left:1px">
+                                    <input class="" type="checkbox" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="resulf_item fl">
+                    <img src="images/touxiang_03.jpg" alt="" class="fl">
+                    <div class="text_info fl">
+                        <div class="info_top">
+                            <div class="top_left fl">
+                                <a href="" class="position fourteen">北京市委副书记、市长</a>
+                                <a href="" class="peo_name fourteen">陈吉宁</a>
+                            </div>
+                            <div class="top_center fl">
+                                <span>职位树位置</span>
+                                <a href="" class="fourteen">北京/市委</a>
+                            </div>
+                            <div class="top_right fr">
+                                <a href="" class="contrast">加入对比</a>
+                                <a href="" class="modify">修改</a>
+                                <a href="" class="collection">收藏</a>
+                            </div>
+                        </div>
+                        <div class="info_bottom">
+                            <ul class="inf_bottom_left fl">
+                                <li class="others">
+                                    <label class="">籍贯</label>
+                                    <span>汉族</span>
+                                </li>
+                                <li class="others">
+                                    <label class="">籍贯</label>
+                                    <span>吉林梨树</span>
+                                </li>
+                                <li class="others">
+                                    <label class="">学历</label>
+                                    <span>研究生</span>
+                                </li>
+                            </ul>
+                            <ul class="inf_bottom_right fl">
+                                <li class="others">
+                                    <label class="right_label">出生日期</label>
+                                    <span>1964-08</span>
+                                </li>
+                                <li class="others">
+                                    <label class="right_label">参加工作时间</label>
+                                    <span>1985-09</span>
+                                </li>
+                                <li class="others">
+                                    <label class="right_label">入党时间</label>
+                                    <span>1984-07</span>
+                                </li>
+                            </ul>
+                            <div class="checkbox btn_posi">
+                                <label class="my_protocol1" style="margin-left:1px">
+                                    <input class="" type="checkbox" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="resulf_item fl">
+                    <img src="images/touxiang_03.jpg" alt="" class="fl">
+                    <div class="text_info fl">
+                        <div class="info_top">
+                            <div class="top_left fl">
+                                <a href="" class="position fourteen">北京市委副书记、市长</a>
+                                <a href="" class="peo_name fourteen">陈吉宁</a>
+                            </div>
+                            <div class="top_center fl">
+                                <span>职位树位置</span>
+                                <a href="" class="fourteen">北京/市委</a>
+                            </div>
+                            <div class="top_right fr">
+                                <a href="" class="contrast">加入对比</a>
+                                <a href="" class="modify">修改</a>
+                                <a href="" class="collection">收藏</a>
+                            </div>
+                        </div>
+                        <div class="info_bottom">
+                            <ul class="inf_bottom_left fl">
+                                <li class="others">
+                                    <label class="">籍贯</label>
+                                    <span>汉族</span>
+                                </li>
+                                <li class="others">
+                                    <label class="">籍贯</label>
+                                    <span>吉林梨树</span>
+                                </li>
+                                <li class="others">
+                                    <label class="">学历</label>
+                                    <span>研究生</span>
+                                </li>
+                            </ul>
+                            <ul class="inf_bottom_right fl">
+                                <li class="others">
+                                    <label class="right_label">出生日期</label>
+                                    <span>1964-08</span>
+                                </li>
+                                <li class="others">
+                                    <label class="right_label">参加工作时间</label>
+                                    <span>1985-09</span>
+                                </li>
+                                <li class="others">
+                                    <label class="right_label">入党时间</label>
+                                    <span>1984-07</span>
+                                </li>
+                            </ul>
+                            <div class="checkbox btn_posi">
+                                <label class="my_protocol1" style="margin-left:1px">
+                                    <input class="" type="checkbox" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="resulf_item fl">
+                    <img src="images/touxiang_03.jpg" alt="" class="fl">
+                    <div class="text_info fl">
+                        <div class="info_top">
+                            <div class="top_left fl">
+                                <a href="" class="position fourteen">北京市委副书记、市长</a>
+                                <a href="" class="peo_name fourteen">陈吉宁</a>
+                            </div>
+                            <div class="top_center fl">
+                                <span>职位树位置</span>
+                                <a href="" class="fourteen">北京/市委</a>
+                            </div>
+                            <div class="top_right fr">
+                                <a href="" class="contrast">加入对比</a>
+                                <a href="" class="modify">修改</a>
+                                <a href="" class="collection">收藏</a>
+                            </div>
+                        </div>
+                        <div class="info_bottom">
+                            <ul class="inf_bottom_left fl">
+                                <li class="others">
+                                    <label class="">籍贯</label>
+                                    <span>汉族</span>
+                                </li>
+                                <li class="others">
+                                    <label class="">籍贯</label>
+                                    <span>吉林梨树</span>
+                                </li>
+                                <li class="others">
+                                    <label class="">学历</label>
+                                    <span>研究生</span>
+                                </li>
+                            </ul>
+                            <ul class="inf_bottom_right fl">
+                                <li class="others">
+                                    <label class="right_label">出生日期</label>
+                                    <span>1964-08</span>
+                                </li>
+                                <li class="others">
+                                    <label class="right_label">参加工作时间</label>
+                                    <span>1985-09</span>
+                                </li>
+                                <li class="others">
+                                    <label class="right_label">入党时间</label>
+                                    <span>1984-07</span>
+                                </li>
+                            </ul>
+                            <div class="checkbox btn_posi">
+                                <label class="my_protocol1" style="margin-left:1px">
+                                    <input class="" type="checkbox" />
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+    <!-- 条件检索主体end -->
+    <script src="laydate/laydate.js"></script>
+    <script type="text/javascript">
+        //日期控件
+        laydate.render({
+            elem: '#conditions_details_time1',
+            theme: '#4f6fb2',
+            type: 'month',
+            value: '1980-01',
+            // showBottom: false
+        });
+        laydate.render({
+            elem: '#conditions_details_time',
+            theme: '#4f6fb2',
+            type: 'month',
+            value: '2019-01',
+            // showBottom: false
+        });
+
+    </script>
+    <script>
+        $(function () {
+            //实现全选反选
+            $("#qian").on('click', function () {
+                $("#quan_checkbox input:checkbox").prop("checked", $(this).prop('checked'));
+            })
+            $("#hou").on('click', function () {
+                $("#hou_checkbox input:checkbox").prop("checked", $(this).prop('checked'));
+            })
+            $("#all2").on('click', function () {
+                $("#resulf_items input:checkbox").prop("checked", $(this).prop('checked'));
+            })
+            $('#selected1').click(function () {
+                var check = $('#resulf_items input[type="checkbox"]');
+                check.each(function () {
+                    this.checked = !this.checked;
+                })
+            });
+            var checkedList = new Array();
+
+
+        })
+    </script>
+
+    <script>
+        function Batch_analysis() {
+            var number = '';
+            var aaa = $("#check_Box input:checkbox:checked")
+            aaa.each(function (k) {
+                if (k == 0) {
+                    number = $(this).val();
+                } else {
+                    number += ',' + $(this).val();
+                }
+            })
+            // console.log(number)
+            // console.log($("#conditions_details_time").val())
+            // console.log($("#conditions_details_time1").val())
+
+            $.ajax({
+                //几个参数需要注意一下
+                type: "GET",//方法类型
+                dataType: "json",//预期服务器返回的数据类型
+                url: 'http://gbrssj.hylanda.com/Home/Search/searchdetail',//url
+                data: { keyword: number },
+                success: function (result) {
+                    console.log(result)
+                }
+            });
+        }
+        $("#btn").click(function () {
+            Batch_analysis();
+        })
+    </script>
+</body>
+
+</html>

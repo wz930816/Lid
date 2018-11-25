@@ -7,15 +7,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Single_data_entry.css">
     <link rel="stylesheet" href="css/pretty.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+
+
+
+
 
 
     <script src="js/jquery1.11.1.min.js"></script>
-    <script src="js/ajaxfileupload.js"></script>
-    <script src="js/distpicker.data.js"></script>
-    <script src="js/distpicker.js"></script>
 </head>
+<script>
+    (function ($) {
+        $.fn.serializeJson = function () {
+            var serializeObj = {};
+            var array = this.serializeArray();
+            var str = this.serialize();
+            $(array).each(function () {
+                if (serializeObj[this.name]) {
+                    if ($.isArray(serializeObj[this.name])) {
+                        serializeObj[this.name].push(this.value);
+                    } else {
+                        serializeObj[this.name] = [serializeObj[this.name], this.value];
+                    }
+                } else {
+                    serializeObj[this.name] = this.value;
+                }
+            });
+            return serializeObj;
+        };
+    })(jQuery);
+</script>
 
 <body class="">
     <!-- 头部start -->
@@ -57,28 +81,26 @@
     </section>
     <!-- 面包屑导航end -->
     <div class="mixitup">
-
-
         <div class="management" id="management">
             <div class="sidebar">
                 <ul>
                     <p>系统管理</p>
-                    <li class="filtera" id="user_m" data-filter="filtera1 "><a href="javascript:;">用户管理</a></li>
-                    <li class="filtera" data-filter="filtera2 "><a href="javascript:;">操作流程</a></li>
-                    <li class="filtera" data-filter="filtera3 "><a href="javascript:;">权限管理</a></li>
+                    <li class="filtera"><a href="javascript:;">用户管理</a></li>
+                    <li class="filtera"><a href="javascript:;">操作流程</a></li>
+                    <li class="filtera"><a href="javascript:;">权限管理</a></li>
                 </ul>
                 <ul>
                     <p>数据管理</p>
-                    <li class="filtera" data-filter="filtera4 "><a href="javascript:;">单条数据录入</a></li>
-                    <li class="filtera" data-filter="filtera5 "><a href="javascript:;">批量数据录入</a></li>
-                    <li class="filtera" data-filter="filtera6 "><a href="javascript:;">系统字段管理</a></li>
-                    <li class="filtera" data-filter="filtera7 "><a href="javascript:;">职位数配置</a></li>
+                    <li class="filtera"><a href="javascript:;">单条数据录入</a></li>
+                    <li class="filtera"><a href="javascript:;">批量数据录入</a></li>
+                    <li class="filtera"><a href="javascript:;">系统字段管理</a></li>
+                    <li class="filtera"><a href="javascript:;">职位数配置</a></li>
                 </ul>
             </div>
 
-            <div class="products single_entry filtera4" data-cat="filtera4">
+            <div class="single_entry">
                 <h3>单条数据录入</h3>
-                <form action="">
+                <form action="" id="four" enctype="multipart/form-data">
                     <div class="single_entry_top">
                         <div class="single_entry_touxiang">
                             <p></p>
@@ -88,99 +110,155 @@
                         <ul>
                             <li>
                                 <label for="name">姓名</label>
-                                <input type="text" class="single_entry_name" style="background:none;">
+                                <input type="text" class="single_entry_name" name="name" style="background:none;">
                             </li>
                             <li class="single_entry_radio">
                                 <label for="name">性别</label>
                                 <div class="pretty circle">
-                                    <input type="radio" name="radio1">
+                                    <input type="radio" name="sex" value="0">
                                     <label><i class="default"></i> 男</label>
                                 </div>
                                 <div class="pretty circle">
-                                    <input type="radio" name="radio1">
+                                    <input type="radio" name="sex" value="1">
                                     <label><i class="default"></i> 女</label>
                                 </div>
                             </li>
                             <li>
                                 <label for="national">民族</label>
-                                <select id="national"></select>
+                                <select class="select" id="national" name="nation"></select>
                             </li>
                             <li>
                                 <label for="name">籍贯</label>
-                                <select class="form-control" id="native_place">
-                                    <option value="">安徽省</option>
+                                <select class="select form-control" id="native_place" name="native_id">
+                                    <option value="安徽省安徽省">安徽省</option>
+                                    <option value="安徽省">安徽省</option>
+                                    <option value="安徽省">安徽省</option>
                                 </select>
-                                <input type="text" class="single_entry_name" style="width:100px">
+                                <select class="select form-control" id="" name="native_id">
+                                    <option value="安徽省1">安徽市</option>
+                                    <option value="安徽省1">安徽省</option>
+                                    <option value="安徽省1">安徽省</option>
+                                </select>
                             </li>
                             <li>
                                 <label for="name">出生日期</label>
-                                <input type="text" id="date_birth1" class="time">
-                                <input type="text" id="date_birth2" class="time">
-                                <input type="text" id="date_birth3" class="time">
+                                <input type="text" id="date_birth1" class="time" name="birth_dat">
+                                <input type="text" id="date_birth2" class="time" name="birth_dat">
+                                <input type="text" id="date_birth3" class="time" name="birth_dat">
                             </li>
                             <li>
                                 <label for="name">参加工作时间</label>
-                                <input type="text" id="date_birth11" class="time">
-                                <input type="text" id="date_birth22" class="time">
-                                <input type="text" id="date_birth33" class="time">
+                                <input type="text" id="date_birth11" class="time" name="work_time">
+                                <input type="text" id="date_birth22" class="time" name="work_time">
+                                <input type="text" id="date_birth33" class="time" name="work_time">
                             </li>
                             <li>
                                 <label for="name">入党时间</label>
-                                <input type="text" id="date_birth111" class="time">
-                                <input type="text" id="date_birth222" class="time">
-                                <input type="text" id="date_birth333" class="time">
+                                <input type="text" id="date_birth111" class="time" name="party_time">
+                                <input type="text" id="date_birth222" class="time" name="party_time">
+                                <input type="text" id="date_birth333" class="time" name="party_time">
                             </li>
                             <li class="single_entry_radio">
                                 <label for="name">特殊群体 </label>
                                 <div class="pretty circle">
-                                    <input type="radio" name="radio2">
+                                    <input type="radio" name="is_special" value="0">
                                     <label><i class="default"></i>是</label>
                                 </div>
                                 <div class="pretty circle">
-                                    <input type="radio" name="radio2">
+                                    <input type="radio" name="is_special" value="1">
                                     <label><i class="default"></i>否</label>
                                 </div>
                             </li>
                             <li>
                                 <label for="name">职称</label>
-                                <input type="text" class="single_entry_name">
+                                <select class="single_entry_name" id="professional" name="title_id">
+                                    <option value="1">安徽省</option>
+                                    <option value="2">安徽省</option>
+                                    <option value="3">安徽省</option>
+                                </select>
+
                             </li>
 
                         </ul>
                         <ul>
                             <li>
                                 <label for="name">主要职位</label>
-                                <input type="text" class="single_entry_name">
+                                <select class="single_entry_name" id="M_professional" name="position">
+                                    <option value="123">毕业院校</option>
+                                    <option value="123">毕业院校</option>
+                                </select>
                             </li>
                             <li>
                                 <label for="name">行政属地</label>
-                                <input type="text" id="" class="time">
-                                <input type="text" id="" class="time">
+                                <select class="single_entry_name time" id="Administrative" name="possession_id">
+                                    <option value="123">毕业院校</option>
+                                    <option value="123">毕业院校</option>
+                                </select>
+                                <!-- <select class="single_entry_name time" id="" name="">
+                                    <option value="">行政属地</option>
+                                    <option value="123">毕业院校</option>
+                                    <option value="123">毕业院校</option>
+                                </select> -->
                             </li>
                             <li>
                                 <label for="name">职位树</label>
-                                <input type="text" id="" class="time" style="width:126px;height:25px">
-                                <input type="text" id="" class="time" style="width:126px;height:25px">
-                                <p><label for="name">&nbsp;</label><input type="text" class="single_entry_name"></p>
-                                <p><label for="name">&nbsp;</label><input type="text" class="single_entry_name"></p>
+                                <select class="time" id="tree1" style="width:126px;height:25px" name="newpos_name">
+
+                                    <option value="123">毕业院校</option>
+                                    <option value="123">毕业院校</option>
+                                </select>
+                                <select class="time" id="tree2" style="width:126px;height:25px" name="newpos_name">
+
+                                    <option value="123">毕业院校</option>
+                                    <option value="123">毕业院校</option>
+                                </select>
+
+                                <p><label for="name">&nbsp;</label><select class="single_entry_name" id="tree3" name="newpos_name">
+
+                                        <option value="123">毕业院校</option>
+                                        <option value="123">毕业院校</option>
+                                    </select></p>
+                                <p><label for="name">&nbsp;</label><select class="single_entry_name" id="tree4" name="newpos_name">
+
+                                        <option value="123">毕业院校</option>
+                                        <option value="123">毕业院校</option>
+                                    </select></p>
 
                             </li>
                             <li>
                                 <label for="name">学历</label>
-                                <input type="text" class="single_entry_name">
+                                <select class="single_entry_name" id="Education" name="education_id">
+
+                                    <option value="123">毕业院校</option>
+                                    <option value="123">毕业院校</option>
+                                </select>
                             </li>
                             <li>
                                 <label for="name">学位</label>
-                                <input type="text" class="single_entry_name">
+                                <select class="single_entry_name" id="Academic" name="degree_id">
+
+                                    <option value="123">毕业院校</option>
+                                </select>
                             </li>
                             <li>
                                 <label for="name">毕业院校</label>
-                                <input type="text" class="single_entry_name">
+                                <select class="single_entry_name" id="Colleges" name="shool_id">
+                                    <option value="123">毕业院校</option>
+                                    <option value="123">毕业院校</option>
+                                    <option value="123">毕业院校</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="name">在职状态</label>
+                                <select class="single_entry_name" id="" name="status">
+                                    <option value="0">在职</option>
+                                    <option value="1">非在职</option>
+                                </select>
                             </li>
                         </ul>
                         <div class="single_entry_top_btn">
                             <button>取消</button>
-                            <button>保存</button>
+                            <button type="button" id="tijiao">保存</button>
                         </div>
 
                     </div>
@@ -269,99 +347,136 @@
                     </div>
                 </form>
             </div>
-            <div class="products batch_right filtera5" data-cat="filtera5">
-                <h3>批量数据录入</h3>
-                <div class="batch_file">
-                    <form enctype="multipart/form-data" method="post">
-                        <div class="batch_file_xiazai">
-                            <p><a href=""><i></i>下载批量录入数据模板</a></p>
-                        </div>
-                        <div class="batch_file_file">
-                            <p><i></i>上传已填数据模板</p>
-                            <input type="file" id="id_photos" name="id_photos">
-                        </div>
-                    </form>
-                </div>
-                <div class="upload_success">
-                    数据上传成功
-                </div>
-                <div class="upload_error">
-                    <p>数据错误</p>
-                    <span>请检查一下字段：</span>
-                    <span>院校名字</span>
-                    <span>籍贯</span>
-                    <span>入党时间</span>
-                    <span>工作时间</span>
-                    <a href="JavaScript:;" onclick="hide()">重新上传</a>
-                    <h5><img src="images/X_03.png" alt="" onclick="hide()"></h5>
-                </div>
 
+
+        </div>
+
+
+        <script>
+            // 信息提交
+            $("#tijiao").click(function () {
+                var four = $('#four').serializeJson();
+                $.ajax({
+                    //几个参数需要注意一下
+                    type: "POST",//方法类型
+                    dataType: "json",//预期服务器返回的数据类型
+                    url: "http://gbrssj.hylanda.com/Home/DataManage/save_info_api",//url
+                    data: four,
+                    success: function (msg) {
+                        console.log(msg)
+                        if (msg.success == true) {
+                            alert('上传成功');
+                            window.location.reload();
+                        }
+                    }
+                });
+            })
+            // 工作经历
+            $("#work_experience_form_btn").click(function () {
+                var four = $('#work_experience_form').serializeJson();
+                console.log(four)
+                // $.ajax({
+                //     //几个参数需要注意一下
+                //     type: "POST",//方法类型
+                //     dataType: "json",//预期服务器返回的数据类型
+                //     url: "#",//url
+                //     data: four,
+                //     success: function (msg) {
+                //         console.log(msg)
+                //         if (msg.success == true) {
+                //             alert('上传成功');
+                //             window.location.reload();
+                //         }
+                //     }
+                // });
+            })
+
+        </script>
+
+
+
+
+
+
+
+
+        <form action="" id="work_experience_form" enctype="multipart/form-data">
+            <div class="work_experience" id="work_experience">
+                <p>添加工作经历</p>
+                <ul>
+                    <li>
+                        <label for="name">任职时间</label>
+                        <input type="text" class="time" id="work_experience_y"><input type="text" class="time" id="work_experience_m">
+                        — &nbsp;<input type="text" class="time" id="work_experience_y1"><input type="text" class="time"
+                            id="work_experience_m1">
+                    </li>
+                    <li>
+                        <label for="name">任职属地</label>
+                        <select id="" style="width:230px;">
+                            <option value="">毕业院校</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="name" style="float: left;margin-right: 4px;">原始履历</label>
+                        <textarea></textarea>
+                    </li>
+                    <li>
+                        <div>
+                            <label for="name">职务</label>
+                            <select id="" style="width:200px;">
+                                <option value="">毕业院校</option>
+                            </select>
+                        </div>
+                        <div class="zjzhiwei">
+                            ＋ 增加职位
+                        </div>
+                        <div>
+                            <label for="name" style="width:30px;">职级</label>
+                            <select id="" style="width:138px;">
+                                <option value="">毕业院校</option>
+                            </select>
+                        </div>
+
+                    </li>
+                    <li>
+                        <label for="name">职业树</label>
+                        <select id="" style="width:508px;">
+                            <option value="">毕业院校</option>
+                        </select>
+                        <label for="name"></label>
+                        <select id="" style="width:508px;margin-top: 18px;">
+                            <option value="">毕业院校</option>
+                        </select>
+                        <label for="name"></label>
+                        <select id="" style="width:508px;margin-top: 18px;">
+                            <option value="">毕业院校</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="name"></label><button class="qqxiao">取消</button><button type="button" class="bbcun"
+                            id="work_experience_form_btn">保存</button>
+                    </li>
+                </ul>
             </div>
-
-        </div>
-
-
-
-
-
-
-        <div class="work_experience" id="work_experience">
-            <p>添加工作经历</p>
-            <ul>
-                <li>
-                    <label for="name">任职时间</label>
-                    <input type="text" class="time"><input type="text" class="time"> — &nbsp;<input type="text" class="time"><input
-                        type="text" class="time">
-                </li>
-                <li>
-                    <label for="name">任职属地</label>
-                    <input type="text" style="width:230px">
-                </li>
-                <li>
-                    <label for="name" style="float: left;margin-right: 4px;">原始履历</label>
-                    <textarea></textarea>
-                </li>
-                <li>
-                    <div>
-                        <label for="name">职务</label>
-                        <input type="text" style="width:200px">
-                    </div>
-                    <div class="zjzhiwei">
-                        ＋ 增加职位
-                    </div>
-                    <div>
-                        <label for="name" style="width:30px;">职级</label>
-                        <input type="text" style="width:138px">
-                    </div>
-
-                </li>
-                <li>
-                    <label for="name">职业树</label>
-                    <input type="text" style="width:508px">
-                    <label for="name"></label>
-                    <input type="text" style="width:508px;margin-top: 18px;">
-                    <label for="name"></label>
-                    <input type="text" style="width:508px;margin-top: 18px;">
-                </li>
-                <li>
-                    <label for="name"></label><button class="qqxiao">取消</button><button class="bbcun">保存</button>
-                </li>
-            </ul>
-        </div>
-
+        </form>
 
 
         <div class="work_experience study_resume" id="study_resume" style="height:290px;">
-            <p>添加工作经历</p>
+            <p>添加学习经历</p>
             <ul>
                 <li>
                     <label for="name">任职时间</label>
-                    <input type="text" class="time"><input type="text" class="time"> — &nbsp;<input type="text" class="time"><input
-                        type="text" class="time">
+                    <input type="text" class="time" id="study_resume_y"><input type="text" class="time" id="study_resume_m">
+                    — &nbsp;<input type="text" class="time" id="study_resume_y1"><input type="text" class="time" id="study_resume_m1">
                 </li>
                 <li>
                     <label for="name">学习学校</label>
-                    <input type="text" style="width:230px">
+                    <select id="" style="width:230px">
+                        <option value="">毕业院校</option>
+                    </select>
+                    <select id="" style="width:230px">
+                        <option value="">毕业院校</option>
+                    </select>
 
                 </li>
                 <li>
@@ -369,7 +484,9 @@
                     <div class="zjzhiwei">
                         ＋ 增加学校
                     </div>
-                    <input type="text" style="width:230px">
+                    <select id="" style="width:230px">
+                        <option value="">毕业院校</option>
+                    </select>
                 </li>
                 <li>
                     <label for="name"></label>
@@ -396,31 +513,6 @@
 
 
 
-    <script>
-        $(document).bind('pageinit', function () {
-            //照片异步上传
-            $('#id_photos').change(function () {  //此处用了change事件，当选择好图片打开，关闭窗口时触发此事件
-                $.ajaxFileUpload({
-                    url: '/uploader/',   //处理图片的脚本路径
-                    type: 'post',       //提交的方式
-                    secureuri: false,   //是否启用安全提交
-                    fileElementId: 'id_photos',     //file控件ID
-                    dataType: 'json',  //服务器返回的数据类型      
-                    success: function (data, status) {  //提交成功后自动执行的处理函数
-                        if (1 != data.total) return;　　 //因为此处指允许上传单张图片，所以数量如果不是1，那就是有错误了
-                        var url = data.files[0].path;
-                        // $('.id_photos').empty();
-                        //此处效果是：当成功上传后会返回一个json数据，里面有url，取出url赋给img标签，然后追加到.id_photos类里显示出图片
-                        // $('.id_photos').append('<img src="' + url + '" value="' + url + '" style="width:80%" >');
-                        //$('.upload-box').remove();
-                    },
-                    error: function (data, status, e) {   //提交失败自动执行的处理函数
-                        alert(e);
-                    }
-                })
-            });
-        })
-    </script>
 
     <script src="laydate/laydate.js"></script>
 
@@ -464,6 +556,25 @@
             elem: '#date_birth111'
             , type: 'year'
         });
+        laydate.render({
+            elem: '#work_experience_y'
+            , type: 'year'
+        });
+        laydate.render({
+            elem: '#work_experience_y1'
+            , type: 'year'
+        });
+        laydate.render({
+            elem: '#work_experience_m'
+            , type: 'month'
+            , format: 'MM'
+        });
+        laydate.render({
+            elem: '#work_experience_m1'
+            , type: 'month'
+            , format: 'MM'
+        });
+
         //年月选择器
         laydate.render({
             elem: '#date_birth222'
@@ -476,59 +587,30 @@
             , type: 'date'
             , format: 'dd'
         });
+        laydate.render({
+            elem: '#study_resume_y'
+            , type: 'year'
+        });
+        laydate.render({
+            elem: '#study_resume_y1'
+            , type: 'year'
+        });
+        laydate.render({
+            elem: '#study_resume_m'
+            , type: 'month'
+            , format: 'MM'
+        });
+        laydate.render({
+            elem: '#study_resume_m1'
+            , type: 'month'
+            , format: 'MM'
+        });
     </script>
 
-    <!-- <script>
-        $.ajax({
-            url: 'json.json',
-            type: 'POST',
-            data: '',
-            success: function (msg) {
-                // console.log(msg.data)
-                // var data = msg.data
-                // var nat = $("#native_place")
-                // for (var i = 0; i < data.length; i++) {
-                //     var option = document.createElement('option');
-                //     option.value = i;
-                //     var txt = document.createTextNode(data[i]);
-                //     option.appendChild(txt);
-                //     nat.appendChild(option);
-                // }
-            }
-        })
-    </script> -->
-
-    <script>
-        function hide() {
-            $(".upload_error").hide()
-        }
-    </script>
 
 
     <div class="clear"></div>
-    <script src="js/jquery.mixitup.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
 
-            var filterList = {
-
-                init: function () {
-                    // MixItUp plugin
-                    $('#management').mixitup({
-                        targetSelector: '.products',
-                        filterSelector: '.filtera',
-                        effects: ['fade'],
-                        easing: 'snap'
-                    });
-                }
-
-            };
-
-            // Run the show!
-            filterList.init();
-
-        });	
-    </script>
     <script type="text/javascript">
         var national = [
             "汉族", "壮族", "满族", "回族", "苗族", "维吾尔族", "土家族", "彝族", "蒙古族", "藏族", "布依族", "侗族", "瑶族", "朝鲜族", "白族", "哈尼族",
@@ -537,7 +619,6 @@
             "俄罗斯族", "裕固族", "乌孜别克族", "门巴族", "鄂伦春族", "独龙族", "塔塔尔族", "赫哲族", "珞巴族"
         ];
         window.onload = function () {
-
             var nat = document.getElementById("national");
             for (var i = 0; i < national.length; i++) {
                 var option = document.createElement('option');
@@ -546,10 +627,6 @@
                 option.appendChild(txt);
                 nat.appendChild(option);
             }
-            var button = document.getElementById('user_m');
-            setTimeout(function () {
-                button.click();//执行执行点击按钮
-            }, 1000);
 
         };
 
@@ -567,7 +644,7 @@
         })
     </script>
 
-    
+
 
 
 </body>

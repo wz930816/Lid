@@ -1,0 +1,10 @@
+.Operation_record{
+    width: 85%;
+    float: left;
+    position: relative;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+.Operation_record h3{
+    margin-top: 15px;
+}
